@@ -9,3 +9,5 @@ const Navbar = () => {
         <Header height {70} p="md" style
     )
 }
+
+export default Navbar;
