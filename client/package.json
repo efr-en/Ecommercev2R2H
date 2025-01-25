@@ -1,0 +1,18 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@mantine/core": "^7.16.1",
+    "@mantine/hooks": "^7.16.1",
+    "@tabler/icons-react": "^3.29.0",
+    "react-router-dom": "^7.1.3"
+  }
+}
