@@ -1,7 +1,7 @@
 import { Footer, Container, Group, Text, Anchor } from "@mantine/core";
 import { IconBrandFacebook, IconBrandInstagram, IconBrandLinkedin} from "@tabler/icons-react";
 
-const Footer = () => {
+const FooterComponent = () => {
     return (
         <Footer height={100} p="md">
             <Container size="lg" style={{ display: "flex", justifyContent: "space-between", alignItems: "center"}}>
@@ -30,4 +30,4 @@ const Footer = () => {
     );
 };
 
-export default Footer
+export default FooterComponent;
