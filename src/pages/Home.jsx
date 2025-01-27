@@ -1,5 +1,5 @@
-import { Container, Title, Text } from "@mantine/core";
-import { Carousel } from "@mantine/carousel";
+import { Container, Title, Text } from '@mantine/core';
+import { Carousel } from '@mantine/carousel';
 
 
 const Home = () => {
@@ -32,7 +32,7 @@ const Home = () => {
                     width: 12,
                     height: 4,
                     transition: "width 250ms ease",
-                    "&[data-active]": {
+                    "&[dataActive]": {
                         width: 24,
                     },
                 },

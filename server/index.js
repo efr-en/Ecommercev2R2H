@@ -3,7 +3,7 @@ const cors = require("cors");
 const productsRouter = require("./routes/products");
 
 const app = express();
-const PORT = 5000;
+const PORT = 3306;
 
 //middleware
 app.use(cors());

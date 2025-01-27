@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Container, Grid, TextInput, Select, Title, Card, Image, Text, Button } from "@mantine/core";
+import { useState, useEffect } from 'react';
+import { Container, Grid, TextInput, Select, Title, Card, Image, Text, Button } from '@mantine/core';
 
 const Products = () => {
     const [products, setProducts] = useState([]);

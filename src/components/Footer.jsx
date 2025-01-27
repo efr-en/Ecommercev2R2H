@@ -1,33 +1,31 @@
-import { Container, Flex, Group, Text, Anchor } from "@mantine/core";
-import { IconBrandFacebook, IconBrandInstagram, IconBrandLinkedin} from "@tabler/icons-react";
+import { Group, Text, Anchor } from '@mantine/core';
+import { IconBrandFacebook, IconBrandInstagram, IconBrandLinkedin} from '@tabler/icons-react';
 
 const FooterComponent = () => {
     return (
-    <div style={{ backgroundColor: "#f8f9fa", padding: "1rem 0", borderTop: "1px solid #e9ecef" }}>
-    <Container size="lg">
-      <Flex justify="space-between" align="center">
-        {/* Copyright Text */}
-        <Text size="sm" color="dimmed">
-          © 2024 Steez. All rights reserved.
-        </Text>
-
-        {/* Social Media Links */}
-        <Group spacing="sm">
-          <Anchor href="https://facebook.com" target="_blank" style={{ color: "inherit" }}>
-            <IconBrandFacebook size={20} />
-          </Anchor>
-          <Anchor href="https://instagram.com" target="_blank" style={{ color: "inherit" }}>
-            <IconBrandInstagram size={20} />
-          </Anchor>
-          <Anchor href="https://linkedin.com" target="_blank" style={{ color: "inherit" }}>
-            <IconBrandLinkedin size={20} />
-          </Anchor>
-        </Group>
-      </Flex>
-    </Container>
-  </div>
-);
-};
+        <footer style={{ padding: "1rem", backgroundColor: "#f8f9fa", borderTop: "1px solid #e9ecef" }}>
+          <Group position="apart">
+            {/* Copyright Text */}
+            <Text size="sm" color="dimmed">
+              © 2024 Steez. All rights reserved.
+            </Text>
+    
+            {/* Social Media Links */}
+            <Group spacing="sm">
+              <Anchor href="https://facebook.com" target="_blank" style={{ color: "inherit" }}>
+                <IconBrandFacebook size={20} />
+              </Anchor>
+              <Anchor href="https://instagram.com" target="_blank" style={{ color: "inherit" }}>
+                <IconBrandInstagram size={20} />
+              </Anchor>
+              <Anchor href="https://linkedin.com" target="_blank" style={{ color: "inherit" }}>
+                <IconBrandLinkedin size={20} />
+              </Anchor>
+            </Group>
+          </Group>
+        </footer>
+      );
+    };
 
 export default FooterComponent;
 

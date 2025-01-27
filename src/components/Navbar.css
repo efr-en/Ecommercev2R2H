@@ -1,0 +1,10 @@
+/* styles.css or a specific CSS file for your components */
+.desktop-navbar {
+    display: flex; /* Show by default */
+}
+
+@media (max-width: 768px) {
+    .desktop-navbar {
+        display: none; /* Hide on mobile */
+    }
+}

@@ -1,53 +1,48 @@
-import { Flex, Container, Group, Burger, Text } from "@mantine/core";
-import { useDisclosure, useMediaQuery } from "@mantine/hooks";
-import { Link } from "react-router-dom";
+import { Drawer, Group, UnstyledButton } from '@mantine/core';
+import { NavLink } from 'react-router-dom';
+import './Navbar.css';
 
-const Navbar = () => {
-    const [opened, { toggle }] = useDisclosure(false);
-    const isMobile = useMediaQuery("(max-width: 768px)");
-
+const NavbarComponent = ({ opened, toggle }) => {
     return (
-        <div style={{ backgroundColor: "#f8f9fa", borderBottom: "1px solid #e9ecef", padding: "10px 0" }}>
-      <Container size="lg">
-        <Flex justify="space-between" align="center">
-          {/* Logo */}
-          <Text
-            component={Link}
-            to="/"
-            weight={700}
-            size="xl"
-            style={{ textDecoration: "none", color: "black" }}
-          >
-            Steez
-          </Text>
+        <>
+            {/* Mobile Navigation */}
+            <Drawer
+                opened={opened}
+                onClose={toggle}
+                title="Navigation"
+                padding="md"
+                size="sm"
+            >
+                <Group direction="column" spacing="md">
+                    <NavLink to="/" style={{ textDecoration: "none" }}>
+                        <UnstyledButton>Home</UnstyledButton>
+                    </NavLink>
+                    <NavLink to="/products" style={{ textDecoration: "none" }}>
+                        <UnstyledButton>Products</UnstyledButton>
+                    </NavLink>
+                    <NavLink to="/contact" style={{ textDecoration: "none" }}>
+                        <UnstyledButton>Contact Us</UnstyledButton>
+                    </NavLink>
+                </Group>
+            </Drawer>
 
-          {/* Navigation Links */}
-          {isMobile ? (
-            // Mobile View: Burger menu
-            <Burger opened={opened} onClick={toggle} size="sm" />
-          ) : (
-            // Desktop View: Full navigation links
-            <Group spacing="xl">
-              <Link to="/" style={{ textDecoration: "none", color: "black", fontSize: "1rem" }}>
-                Home
-              </Link>
-              <Link to="/products" style={{ textDecoration: "none", color: "black", fontSize: "1rem" }}>
-                Products
-              </Link>
-              <Link to="/contact" style={{ textDecoration: "none", color: "black", fontSize: "1rem" }}>
-                Contact Us
-              </Link>
+            <Group spacing="lg" position="right" style={{ display: 'none' }} className="desktop-navbar">
+                    <NavLink to="/" style={{ textDecoration: "none" }}>
+                        <UnstyledButton>Home</UnstyledButton>
+                    </NavLink>
+                    <NavLink to="/products" style={{ textDecoration: "none" }}>
+                        <UnstyledButton>Products</UnstyledButton>
+                    </NavLink>
+                    <NavLink to="/contact" style={{ textDecoration: "none" }}>
+                        <UnstyledButton>Contact Us</UnstyledButton>
+                    </NavLink>
             </Group>
-          )}
-        </Flex>
-      </Container>
-    </div>
-  );
+        </>
+    );
 };
 
 
-
-export default Navbar;
+export default NavbarComponent;
 
 
 // OLD DEPRECATED MANTINE CODE INC OF BREAKAGE
