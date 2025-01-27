@@ -1,6 +1,7 @@
 import { Container, Title, Text } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
 
+
 const Home = () => {
     return (
         <Container size="lg" style={{ marginTop: "2rem" }}>
@@ -16,7 +17,7 @@ const Home = () => {
             >
                 <Carousel.Slide>
                     <img
-                    src="..."
+                    src="./public/shred1.jpg"
                     alt="..."
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
@@ -24,7 +25,7 @@ const Home = () => {
 
                 <Carousel.Slide>
                     <img
-                    src="..."
+                    src="./public/shred2.jpg"
                     alt="..."
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
@@ -32,7 +33,7 @@ const Home = () => {
 
                 <Carousel.Slide>
                     <img
-                    src="..."
+                    src="./public/shred3.jpg"
                     alt="..."
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
@@ -40,7 +41,7 @@ const Home = () => {
 
                 <Carousel.Slide>
                     <img
-                    src="..."
+                    src="./public/shred4.jpg"
                     alt="..."
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
@@ -48,7 +49,7 @@ const Home = () => {
 
                 <Carousel.Slide>
                     <img
-                    src="..."
+                    src="./public/shred5.jpg"
                     alt="..."
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
