@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { MantineProvider } from "@mantine/core";
 import Navbar from './components/Navbar.jsx';
 import FooterComponent from './components/Footer.jsx';
 import Home from './pages/Home.jsx';
@@ -7,6 +8,7 @@ import Contact from './pages/Contact.jsx';
 
 const App = () => {
   return (
+    <MantineProvider withGlobalStyles withNormalizeCSS>
     <Router>
 
       {/* Navigation Bar */}
@@ -23,6 +25,7 @@ const App = () => {
       <FooterComponent />
 
     </Router>
+    </MantineProvider>
   );
 };
 

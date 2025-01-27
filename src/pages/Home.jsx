@@ -3,6 +3,14 @@ import { Carousel } from "@mantine/carousel";
 
 
 const Home = () => {
+    const carouselStyles = {
+        height: 400, // Fixed height for the carousel
+        maxWidth: "100%", // Prevents overflow
+        margin: "0 auto", // Centers the carousel horizontally
+        borderRadius: "8px", // Optional: Rounded corners for a cleaner look
+        overflow: "hidden", // Hides content outside of the carousel boundaries
+    };
+
     return (
         <Container size="lg" style={{ marginTop: "2rem" }}>
             <Title align="center" order={1}>
@@ -12,12 +20,28 @@ const Home = () => {
                 Your one-stop shop for the latest gear
             </Text>
 
-            <Carousel withIndicators height={400} loop
-            style={{ marginTop: "2rem", marginBottom: "2rem" }}
+            <Carousel
+            withIndicators
+            height={400}
+            slideSize="100%"
+            loop
+            dragFree
+            align="start"
+            styles={{
+                indicator: {
+                    width: 12,
+                    height: 4,
+                    transition: "width 250ms ease",
+                    "&[data-active]": {
+                        width: 24,
+                    },
+                },
+            }}
+                style={carouselStyles}
             >
                 <Carousel.Slide>
                     <img
-                    src="./public/shred1.jpg"
+                    src="/shred1.jpg"
                     alt="..."
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
@@ -25,7 +49,7 @@ const Home = () => {
 
                 <Carousel.Slide>
                     <img
-                    src="./public/shred2.jpg"
+                    src="/shred2.jpg"
                     alt="..."
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
@@ -33,7 +57,7 @@ const Home = () => {
 
                 <Carousel.Slide>
                     <img
-                    src="./public/shred3.jpg"
+                    src="/shred3.jpg"
                     alt="..."
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
@@ -41,7 +65,7 @@ const Home = () => {
 
                 <Carousel.Slide>
                     <img
-                    src="./public/shred4.jpg"
+                    src="/shred4.jpg"
                     alt="..."
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
@@ -49,7 +73,7 @@ const Home = () => {
 
                 <Carousel.Slide>
                     <img
-                    src="./public/shred5.jpg"
+                    src="/shred5.jpg"
                     alt="..."
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
