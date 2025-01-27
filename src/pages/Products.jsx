@@ -16,5 +16,61 @@ const Products = () => {
         setFilters((prev) => ({ ...prev, [key]: value }));
     };
 
-    return
-}
+    return (
+        <Container size="lg" style={{ marginTop: "2rem" }}>
+            <Title order={1} align="center" style={{ marginBottom: "2rem" }}>
+                Products
+            </Title>
+
+            {/* Filter Products */}
+            <Grid style={{ marginBottom: "2rem" }}>
+                <Grid.Col span={6}>
+                    <TextInput
+                    placeholder="Max Price"
+                    label="Price Filter"
+                    onChange={(e) => handleFilterChange("price", e.target.value)}
+                    />
+                </Grid.Col>
+                <Grid.Col span={6}>
+                    <Select
+                    label="Product Type"
+                    placeholder="Choose a type"
+                    data={[
+                        { value: "deck", label: "Deck"},
+                        { value: "shoes", label: "Shoes"},
+                    ]}
+                    onChange={(value) => handleFilterChange("type", value)}
+                    />
+                </Grid.Col>
+            </Grid>
+
+            {/* Products Card Grid */}
+            <Grid>
+                {products.map((product) => (
+                    <Grid.Col key={product.id} span={4}>
+                        <Card shadow="sm" padding="lg" radius="md" withBorder>
+                            <Card.Section>
+                                <Image src={product.image} alt={product.title} height={200} />
+                            </Card.Section>
+
+                            <Text weight={500} size="lg" style={{ marginBottom: "1rem" }}>
+                                {product.title}
+                            </Text>
+                            <Text size="sm" color="dimmed" style={{ marginBottom: "1rem" }}>
+                                {product.description}
+                            </Text>
+                            <Text weight={700} size="md">
+                                ${product.price}
+                            </Text>
+                            <Button variant="light" fullWidth style={{ marginTop: "1rem" }}>
+                                Add to Cart
+                            </Button>
+                        </Card>
+                    </Grid.Col>
+                ))}
+            </Grid>
+        </Container>
+    );
+};
+
+export default Products;
