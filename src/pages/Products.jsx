@@ -50,7 +50,7 @@ const Products = () => {
                     <Grid.Col key={product.id} span={4}>
                         <Card shadow="sm" padding="lg" radius="md" withBorder>
                             <Card.Section>
-                                <Image src={product.image} alt={product.title} height={300} />
+                                <Image src={product.image} alt={product.title} height={400} />
                             </Card.Section>
 
                             <Text weight={500} size="lg" style={{ marginBottom: "1rem" }}>
@@ -69,6 +69,9 @@ const Products = () => {
                     </Grid.Col>
                 ))}
             </Grid>
+            <Text size='md' align='center'>
+            Looking for something we don't carry? Please <a href='/contact'>Contact Us</a>
+        </Text>
         </Container>
     );
 };

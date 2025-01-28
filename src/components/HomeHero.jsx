@@ -17,7 +17,7 @@ function HomeHeroSection() {
           alt="nyjah hero"
           width="80%"     // adjust as needed
           radius="md"
-          withPlaceholder // optional if your image is large
+ // optional if your image is large
         />
         <Button
           component={Link}

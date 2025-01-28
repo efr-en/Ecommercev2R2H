@@ -21,7 +21,7 @@ const Home = () => {
 
             <HomeHeroSection />
 
-            <Carousel
+            <Carousel className='home-carousel'
             withIndicators
             height={400}
             slideSize="100%"
