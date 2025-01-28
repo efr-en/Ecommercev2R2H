@@ -2,6 +2,8 @@ import { Group, Text, Anchor } from '@mantine/core';
 import { IconBrandFacebook, IconBrandInstagram, IconBrandLinkedin} from '@tabler/icons-react';
 
 const FooterComponent = () => {
+    console.log("footer component rendered");
+
     return (
         <footer style={{ padding: "1rem", backgroundColor: "#f8f9fa", borderTop: "1px solid #e9ecef" }}>
           <Group position="apart">
@@ -12,13 +14,13 @@ const FooterComponent = () => {
     
             {/* Social Media Links */}
             <Group spacing="sm">
-              <Anchor href="https://facebook.com" target="_blank" style={{ color: "inherit" }}>
+              <Anchor href="https://www.facebook.com/efren.laris.1?mibextid=LQQJ4d" target="_blank" style={{ color: "inherit" }}>
                 <IconBrandFacebook size={20} />
               </Anchor>
-              <Anchor href="https://instagram.com" target="_blank" style={{ color: "inherit" }}>
+              <Anchor href="https://www.instagram.com/youbuiltlikeafart" target="_blank" style={{ color: "inherit" }}>
                 <IconBrandInstagram size={20} />
               </Anchor>
-              <Anchor href="https://linkedin.com" target="_blank" style={{ color: "inherit" }}>
+              <Anchor href="https://www.linkedin.com/in/efren-laris-5605a7312" target="_blank" style={{ color: "inherit" }}>
                 <IconBrandLinkedin size={20} />
               </Anchor>
             </Group>

@@ -1,10 +1,12 @@
-/* styles.css or a specific CSS file for your components */
+/* Show desktop navbar on large screens, hide on small screens */
 .desktop-navbar {
-    display: flex; /* Show by default */
-}
-
-@media (max-width: 768px) {
+    display: flex;
+  }
+  
+  /* If you want to hide desktop nav on small screens, add a media query */
+  @media (max-width: 768px) {
     .desktop-navbar {
-        display: none; /* Hide on mobile */
+      display: none;
     }
-}
+  }
+  
