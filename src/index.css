@@ -1,3 +1,17 @@
+body {
+  background-color: #F1E1B0;
+}
+
+.home-steez {
+  color: rgb(198, 0, 25);
+  text-shadow: 2px 2px rgb(241, 225, 176);
+  font-family: "Galada", cursive;
+}
+
+.contact-form {
+  background-color: rgb(248, 248, 248);
+  padding: 2rem;
+}
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

@@ -1,5 +1,7 @@
 import { Container, Title, Text } from '@mantine/core';
 import { Carousel } from '@mantine/carousel';
+import HomeHeroSection from '../components/HomeHero';
+import '../index.css'
 
 
 const Home = () => {
@@ -12,13 +14,12 @@ const Home = () => {
     };
 
     return (
-        <Container size="lg" style={{ marginTop: "2rem" }}>
-            <Title align="center" order={1}>
-                Welcome to steez
+        <Container size="lg" style={{ marginTop: "4rem" }}>
+            <Title className="home-steez" align="center" order={1}>
+                Welcome to STEEZ
             </Title>
-            <Text align="center" size="lg" color="dimmed">
-                Your one-stop shop for the latest gear
-            </Text>
+
+            <HomeHeroSection />
 
             <Carousel
             withIndicators

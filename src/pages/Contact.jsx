@@ -37,7 +37,7 @@ const Contact = () => {
 
     // The form's visual layout
     return (
-        <Container size="sm" style={{ marginTop: "2rem" }}>
+        <Container className="contact-form" size="sm" style={{ marginTop: "2rem" }}>
             <Title align="Center" order={1} style={{ marginBottom: "2rem" }}>
                 Contact Us
             </Title>
@@ -49,7 +49,6 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 error={errors.name}
-                required
                 />
                 <TextInput
                 label="Email"
@@ -58,7 +57,6 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 error={errors.email}
-                required
                 style={{ marginTop: "1rem" }}
                 />
                 <Textarea
@@ -68,7 +66,6 @@ const Contact = () => {
                 value={formData.comment}
                 onChange={handleChange}
                 error={errors.comment}
-                required
                 style={{ marginTop: "1rem" }}
                 />
                 <Group position="center" style={{ marginTop: "1rem" }}>

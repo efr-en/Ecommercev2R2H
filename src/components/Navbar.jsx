@@ -1,51 +1,57 @@
-import { Drawer, Group, UnstyledButton, Burger } from '@mantine/core';
-import { NavLink } from 'react-router-dom';
-import './Navbar.css';
+import { useState } from "react";
+import { Drawer, Burger, Group, UnstyledButton } from "@mantine/core";
+import { NavLink } from "react-router-dom";
+import "../Navbar.css";
 
-const NavbarComponent = ({ opened, toggle }) => {
-    console.log("Navbar component rendered");
-    return (
-        <>
+const Navbar = () => {
+  const [opened, setOpened] = useState(false);
 
-        <Burger opened={opened} onClick={toggle} size="sm" />
-            {/* Mobile Navigation */}
-            <Drawer
-                opened={opened}
-                onClose={toggle}
-                title="Navigation"
-                padding="md"
-                size="sm"
-            >
-                <Group direction="column" spacing="md">
-                    <NavLink to="/" style={{ textDecoration: "none" }}>
-                        <UnstyledButton>Home</UnstyledButton>
-                    </NavLink>
-                    <NavLink to="/products" style={{ textDecoration: "none" }}>
-                        <UnstyledButton>Products</UnstyledButton>
-                    </NavLink>
-                    <NavLink to="/contact" style={{ textDecoration: "none" }}>
-                        <UnstyledButton>Contact Us</UnstyledButton>
-                    </NavLink>
-                </Group>
-            </Drawer>
+  const toggleDrawer = () => setOpened((o) => !o);
+  const closeDrawer = () => setOpened(false);
 
-            <Group spacing="lg" position="right" className="desktop-navbar">
-                    <NavLink to="/" style={{ textDecoration: "none" }}>
-                        <UnstyledButton>Home</UnstyledButton>
-                    </NavLink>
-                    <NavLink to="/products" style={{ textDecoration: "none" }}>
-                        <UnstyledButton>Products</UnstyledButton>
-                    </NavLink>
-                    <NavLink to="/contact" style={{ textDecoration: "none" }}>
-                        <UnstyledButton>Contact Us</UnstyledButton>
-                    </NavLink>
-            </Group>
-        </>
-    );
+  return (
+    <>
+      {/* Burger always visible (hide it on large screens in CSS if you like) */}
+      <Burger opened={opened} onClick={toggleDrawer} size="sm" />
+
+      {/* Mobile Drawer */}
+      <Drawer
+        opened={opened}
+        onClose={closeDrawer}
+        title="Navigation"
+        padding="md"
+        size="sm"
+      >
+        <Group direction="column" spacing="md">
+          <NavLink to="/" style={{ textDecoration: "none" }} onClick={closeDrawer}>
+            <UnstyledButton>Home</UnstyledButton>
+          </NavLink>
+          <NavLink to="/products" style={{ textDecoration: "none" }} onClick={closeDrawer}>
+            <UnstyledButton>Products</UnstyledButton>
+          </NavLink>
+          <NavLink to="/contact" style={{ textDecoration: "none" }} onClick={closeDrawer}>
+            <UnstyledButton>Contact Us</UnstyledButton>
+          </NavLink>
+        </Group>
+      </Drawer>
+
+      {/* Desktop nav */}
+      <Group spacing="lg" className="desktop-navbar">
+        <NavLink to="/" style={{ textDecoration: "none" }}>
+          <UnstyledButton>Home</UnstyledButton>
+        </NavLink>
+        <NavLink to="/products" style={{ textDecoration: "none" }}>
+          <UnstyledButton>Products</UnstyledButton>
+        </NavLink>
+        <NavLink to="/contact" style={{ textDecoration: "none" }}>
+          <UnstyledButton>Contact Us</UnstyledButton>
+        </NavLink>
+      </Group>
+    </>
+  );
 };
 
-
-export default NavbarComponent;
+export default Navbar;
 
 
 // OLD DEPRECATED MANTINE CODE INC OF BREAKAGE
@@ -111,6 +117,56 @@ export default NavbarComponent;
 //             </Drawer>
 
 //             <Group spacing="lg" position="right" style={{ display: 'none' }} className="desktop-navbar">
+//                     <NavLink to="/" style={{ textDecoration: "none" }}>
+//                         <UnstyledButton>Home</UnstyledButton>
+//                     </NavLink>
+//                     <NavLink to="/products" style={{ textDecoration: "none" }}>
+//                         <UnstyledButton>Products</UnstyledButton>
+//                     </NavLink>
+//                     <NavLink to="/contact" style={{ textDecoration: "none" }}>
+//                         <UnstyledButton>Contact Us</UnstyledButton>
+//                     </NavLink>
+//             </Group>
+//         </>
+//     );
+// };
+
+
+// export default NavbarComponent;
+
+
+// import { Drawer, Group, UnstyledButton, Burger } from '@mantine/core';
+// import { NavLink } from 'react-router-dom';
+// import './Navbar.css';
+
+// const NavbarComponent = ({ opened, toggle }) => {
+//     console.log("Navbar component rendered");
+//     return (
+//         <>
+
+//         <Burger opened={opened} onClick={toggle} size="sm" />
+//             {/* Mobile Navigation */}
+//             <Drawer
+//                 opened={opened}
+//                 onClose={toggle}
+//                 title="Navigation"
+//                 padding="md"
+//                 size="sm"
+//             >
+//                 <Group direction="column" spacing="md">
+//                     <NavLink to="/" style={{ textDecoration: "none" }}>
+//                         <UnstyledButton>Home</UnstyledButton>
+//                     </NavLink>
+//                     <NavLink to="/products" style={{ textDecoration: "none" }}>
+//                         <UnstyledButton>Products</UnstyledButton>
+//                     </NavLink>
+//                     <NavLink to="/contact" style={{ textDecoration: "none" }}>
+//                         <UnstyledButton>Contact Us</UnstyledButton>
+//                     </NavLink>
+//                 </Group>
+//             </Drawer>
+
+//             <Group spacing="lg" position="right" className="desktop-navbar">
 //                     <NavLink to="/" style={{ textDecoration: "none" }}>
 //                         <UnstyledButton>Home</UnstyledButton>
 //                     </NavLink>
