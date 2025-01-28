@@ -2,59 +2,37 @@ import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { MantineProvider, AppShell } from '@mantine/core';
+import { MantineProvider } from "@mantine/core";
+import Navbar from './components/Navbar.jsx';
+import FooterComponent from './components/Footer.jsx';
 import Home from './pages/Home.jsx';
 import Products from './pages/Products.jsx';
 import Contact from './pages/Contact.jsx';
-import Navbar from './components/Navbar.jsx';       // The new mobile + desktop Navbar
-import FooterComponent from './components/Footer.jsx';       // The new Footer
 
-function App() {
+const App = () => {
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
-      <Router>
-        <AppShell
-          padding="md"
-          // Header
-          header={
-            <AppShell.Header height={60} p="md">
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  height: '100%',
-                }}
-              >
-                {/* Your brand/logo on the left */}
-                <h1 style={{ margin: 0 }}>Steez</h1>
+    <Router>
 
-                {/* Desktop and Mobile nav from Navbar.jsx */}
-                <Navbar />
-              </div>
-            </AppShell.Header>
-          }
-          // Footer
-          footer={
-            <AppShell.Footer height={60} p="md">
-              <FooterComponent />
-            </AppShell.Footer>
-          }
-        >
-          {/* Main content */}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </AppShell>
-      </Router>
+      {/* Navigation Bar */}
+      <Navbar />
+
+      {/* Main Content */}
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/products' element={<Products />} />
+        <Route path='/contact' element={<Contact />} />
+      </Routes>
+
+      {/* Footer */}
+      <FooterComponent />
+
+    </Router>
     </MantineProvider>
   );
-}
+};
 
 export default App;
-
 
 
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -168,5 +146,62 @@ export default App;
 //     </MantineProvider>
 //   );
 // };
+
+// export default App;
+
+
+
+
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { MantineProvider, AppShell } from '@mantine/core';
+// import Home from './pages/Home.jsx';
+// import Products from './pages/Products.jsx';
+// import Contact from './pages/Contact.jsx';
+// import Navbar from './components/Navbar.jsx';       // The new mobile + desktop Navbar
+// import FooterComponent from './components/Footer.jsx';       // The new Footer
+
+// function App() {
+//   return (
+//     <MantineProvider withGlobalStyles withNormalizeCSS>
+//       <Router>
+//         <AppShell
+//           padding="md"
+//           // Header
+//           header={
+//             <AppShell.Header height={60} p="md">
+//               <div
+//                 style={{
+//                   display: 'flex',
+//                   alignItems: 'center',
+//                   justifyContent: 'space-between',
+//                   height: '100%',
+//                 }}
+//               >
+//                 {/* Your brand/logo on the left */}
+//                 <h1 style={{ margin: 0 }}>Steez</h1>
+
+//                 {/* Desktop and Mobile nav from Navbar.jsx */}
+//                 <Navbar />
+//               </div>
+//             </AppShell.Header>
+//           }
+//           // Footer
+//           footer={
+//             <AppShell.Footer height={60} p="md">
+//               <FooterComponent />
+//             </AppShell.Footer>
+//           }
+//         >
+//           {/* Main content */}
+//           <Routes>
+//             <Route path="/" element={<Home />} />
+//             <Route path="/products" element={<Products />} />
+//             <Route path="/contact" element={<Contact />} />
+//           </Routes>
+//         </AppShell>
+//       </Router>
+//     </MantineProvider>
+//   );
+// }
 
 // export default App;

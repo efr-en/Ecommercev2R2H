@@ -1,57 +1,55 @@
-import { useState } from "react";
-import { Drawer, Burger, Group, UnstyledButton } from "@mantine/core";
-import { NavLink } from "react-router-dom";
-import "../Navbar.css";
+import { Flex, Container, Group, Burger, Text } from "@mantine/core";
+import { useDisclosure, useMediaQuery } from "@mantine/hooks";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [opened, setOpened] = useState(false);
+    const [opened, { toggle }] = useDisclosure(false);
+    const isMobile = useMediaQuery("(max-width: 768px)");
 
-  const toggleDrawer = () => setOpened((o) => !o);
-  const closeDrawer = () => setOpened(false);
+    return (
+        <div style={{ backgroundColor: "#f8f9fa", borderBottom: "1px solid #e9ecef", padding: "10px 0" }}>
+      <Container size="lg">
+        <Flex justify="space-between" align="center">
+          {/* Logo */}
+          <Text
+            component={Link}
+            to="/"
+            weight={700}
+            size="xl"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            Steez
+          </Text>
 
-  return (
-    <>
-      {/* Burger always visible (hide it on large screens in CSS if you like) */}
-      <Burger opened={opened} onClick={toggleDrawer} size="sm" />
-
-      {/* Mobile Drawer */}
-      <Drawer
-        opened={opened}
-        onClose={closeDrawer}
-        title="Navigation"
-        padding="md"
-        size="sm"
-      >
-        <Group direction="column" spacing="md">
-          <NavLink to="/" style={{ textDecoration: "none" }} onClick={closeDrawer}>
-            <UnstyledButton>Home</UnstyledButton>
-          </NavLink>
-          <NavLink to="/products" style={{ textDecoration: "none" }} onClick={closeDrawer}>
-            <UnstyledButton>Products</UnstyledButton>
-          </NavLink>
-          <NavLink to="/contact" style={{ textDecoration: "none" }} onClick={closeDrawer}>
-            <UnstyledButton>Contact Us</UnstyledButton>
-          </NavLink>
-        </Group>
-      </Drawer>
-
-      {/* Desktop nav */}
-      <Group spacing="lg" className="desktop-navbar">
-        <NavLink to="/" style={{ textDecoration: "none" }}>
-          <UnstyledButton>Home</UnstyledButton>
-        </NavLink>
-        <NavLink to="/products" style={{ textDecoration: "none" }}>
-          <UnstyledButton>Products</UnstyledButton>
-        </NavLink>
-        <NavLink to="/contact" style={{ textDecoration: "none" }}>
-          <UnstyledButton>Contact Us</UnstyledButton>
-        </NavLink>
-      </Group>
-    </>
+          {/* Navigation Links */}
+          {isMobile ? (
+            // Mobile View: Burger menu
+            <Burger opened={opened} onClick={toggle} size="sm" 
+            />
+          ) : (
+            // Desktop View: Full navigation links
+            <Group spacing="xl">
+              <Link to="/" style={{ textDecoration: "none", color: "black", fontSize: "1rem" }}>
+                Home
+              </Link>
+              <Link to="/products" style={{ textDecoration: "none", color: "black", fontSize: "1rem" }}>
+                Products
+              </Link>
+              <Link to="/contact" style={{ textDecoration: "none", color: "black", fontSize: "1rem" }}>
+                Contact Us
+              </Link>
+            </Group>
+          )}
+        </Flex>
+      </Container>
+    </div>
   );
 };
 
+
+
 export default Navbar;
+
 
 
 // OLD DEPRECATED MANTINE CODE INC OF BREAKAGE
@@ -183,3 +181,60 @@ export default Navbar;
 
 
 // export default NavbarComponent;
+
+
+
+// import { useState } from "react";
+// import { Drawer, Burger, Group, UnstyledButton } from "@mantine/core";
+// import { NavLink } from "react-router-dom";
+// import "../Navbar.css";
+
+// const Navbar = () => {
+//   const [opened, setOpened] = useState(false);
+
+//   const toggleDrawer = () => setOpened((o) => !o);
+//   const closeDrawer = () => setOpened(false);
+
+//   return (
+//     <>
+//       {/* Burger always visible (hide it on large screens in CSS if you like) */}
+//       <Burger opened={opened} onClick={toggleDrawer} size="sm" />
+
+//       {/* Mobile Drawer */}
+//       <Drawer
+//         opened={opened}
+//         onClose={closeDrawer}
+//         title="Navigation"
+//         padding="md"
+//         size="sm"
+//       >
+//         <Group direction="column" spacing="md">
+//           <NavLink to="/" style={{ textDecoration: "none" }} onClick={closeDrawer}>
+//             <UnstyledButton>Home</UnstyledButton>
+//           </NavLink>
+//           <NavLink to="/products" style={{ textDecoration: "none" }} onClick={closeDrawer}>
+//             <UnstyledButton>Products</UnstyledButton>
+//           </NavLink>
+//           <NavLink to="/contact" style={{ textDecoration: "none" }} onClick={closeDrawer}>
+//             <UnstyledButton>Contact Us</UnstyledButton>
+//           </NavLink>
+//         </Group>
+//       </Drawer>
+
+//       {/* Desktop nav */}
+//       <Group spacing="lg" className="desktop-navbar">
+//         <NavLink to="/" style={{ textDecoration: "none" }}>
+//           <UnstyledButton>Home</UnstyledButton>
+//         </NavLink>
+//         <NavLink to="/products" style={{ textDecoration: "none" }}>
+//           <UnstyledButton>Products</UnstyledButton>
+//         </NavLink>
+//         <NavLink to="/contact" style={{ textDecoration: "none" }}>
+//           <UnstyledButton>Contact Us</UnstyledButton>
+//         </NavLink>
+//       </Group>
+//     </>
+//   );
+// };
+
+// export default Navbar;
