@@ -6,7 +6,7 @@ function HomeHeroSection() {
   return (
     <>
       {/* First text */}
-      <Text align="center" size="lg" color="dimmed" mb="md">
+      <Text align="center" size="lg" color="black" mb="md">
         Your one-stop shop for the latest skate gear
       </Text>
 

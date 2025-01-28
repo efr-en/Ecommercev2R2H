@@ -7,43 +7,45 @@ const Navbar = () => {
     const isMobile = useMediaQuery("(max-width: 768px)");
 
     return (
-        <div style={{ backgroundColor: "#f8f9fa", borderBottom: "1px solid #e9ecef", padding: "10px 0" }}>
-      <Container size="lg">
+        <div style={{ backgroundColor: "black", borderBottom: "1px solid #e9ecef", padding: "10px 0" }}>
+        <Container size="lg">
         <Flex justify="space-between" align="center">
+
           {/* Logo */}
-          <Text
+            <Text
             component={Link}
             to="/"
             weight={700}
             size="xl"
-            style={{ textDecoration: "none", color: "black" }}
-          >
-            Steez
-          </Text>
+            style={{ textDecoration: "none", color: "white" }}
+            >
+            <img className="nav-logo" src="/logo2.png"></img>
+            </Text>
 
           {/* Navigation Links */}
-          {isMobile ? (
+            {isMobile ? (
             // Mobile View: Burger menu
-            <Burger opened={opened} onClick={toggle} size="sm" 
+            <Burger opened={opened} onClick={toggle} size="sm"
+            style={{ color: "white"}} 
             />
-          ) : (
+            ) : (
             // Desktop View: Full navigation links
             <Group spacing="xl">
-              <Link to="/" style={{ textDecoration: "none", color: "black", fontSize: "1rem" }}>
-                Home
-              </Link>
-              <Link to="/products" style={{ textDecoration: "none", color: "black", fontSize: "1rem" }}>
-                Products
-              </Link>
-              <Link to="/contact" style={{ textDecoration: "none", color: "black", fontSize: "1rem" }}>
-                Contact Us
-              </Link>
+                <Link to="/" style={{ textDecoration: "none", color: "white", fontSize: "1rem" }}>
+                    Home
+                </Link>
+                <Link to="/products" style={{ textDecoration: "none", color: "white", fontSize: "1rem" }}>
+                    Products
+                </Link>
+                <Link to="/contact" style={{ textDecoration: "none", color: "white", fontSize: "1rem" }}>
+                    Contact Us
+                </Link>
             </Group>
-          )}
+            )}
         </Flex>
-      </Container>
+        </Container>
     </div>
-  );
+    );
 };
 
 

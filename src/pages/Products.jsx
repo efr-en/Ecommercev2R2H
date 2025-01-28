@@ -47,10 +47,10 @@ const Products = () => {
             {/* Products Card Grid */}
             <Grid>
                 {products.map((product) => (
-                    <Grid.Col key={product.id} span={4}>
-                        <Card shadow="sm" padding="lg" radius="md" withBorder>
-                            <Card.Section>
-                                <Image src={product.image} alt={product.title} height={400} />
+                    <Grid.Col key={product.id} span={6}>
+                        <Card shadow="md" padding="xl" radius="lg" withBorder>
+                            <Card.Section className='product-image'>
+                                <Image src={product.image} alt={product.title} height={600} style={{ objectFit: "contain"}} />
                             </Card.Section>
 
                             <Text weight={500} size="lg" style={{ marginBottom: "1rem" }}>

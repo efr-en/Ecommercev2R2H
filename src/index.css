@@ -16,6 +16,15 @@ body {
 .home-carousel {
   background-color: black;
 }
+
+.nav-logo {
+  height: 4rem;
+  width: 5rem;
+}
+
+.product-image {
+  object-fit: cover;
+}
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

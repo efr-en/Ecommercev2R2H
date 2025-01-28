@@ -14,7 +14,7 @@ const Home = () => {
     };
 
     return (
-        <Container size="lg" style={{ marginTop: "4rem" }}>
+        <Container size="lg" style={{ marginTop: "2.5rem" }}>
             <Title className="home-steez" align="center" order={1}>
                 Welcome to STEEZ
             </Title>

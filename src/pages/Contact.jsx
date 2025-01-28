@@ -37,6 +37,10 @@ const Contact = () => {
 
     // The form's visual layout
     return (
+        <>
+        <Text>
+        Hello
+    </Text>
         <Container className="contact-form" size="sm" style={{ marginTop: "2rem" }}>
             <Title align="Center" order={1} style={{ marginBottom: "2rem" }}>
                 Contact Us
@@ -77,7 +81,9 @@ const Contact = () => {
                     {successMessage}
                 </Text>
             )}
+
         </Container>
+        </>
     );
 };
 
