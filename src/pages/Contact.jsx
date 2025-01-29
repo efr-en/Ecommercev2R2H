@@ -11,7 +11,7 @@ const Contact = () => {
         if (successMessage) {
             const timer = setTimeout(() => {
                 setSuccessMessage("");
-            }, 5000); // 5000 milliseconds = 5 seconds
+            }, 5000);
 
             // Cleanup function to clear timeout if component unmounts
             return () => clearTimeout(timer);
