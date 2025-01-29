@@ -28,9 +28,9 @@ app.get('/products', (req, res) => {
 // Serve static files from the React app
 
 // The "catchall" handler: for any request that doesn't match one above, send back index.html.
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'index.html'));
+// });
 
 // Start the server
 app.listen(PORT, () => {
