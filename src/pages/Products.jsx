@@ -9,7 +9,7 @@ const Products = () => {
 
     useEffect(() => {
         const query = new URLSearchParams(filters).toString();
-        fetch(`${import.meta.env.VITE_API_URL}/api/products?${query}`)
+        fetch(`/api/products?${query}`)
             .then((res) => {
                 if (!res.ok) {
                     throw new Error('Failed to fetch products');
