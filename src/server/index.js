@@ -17,12 +17,19 @@ app.use(cors({
 app.use(express.json());
 
 // API routes
-app.use(express.static(path.join(__dirname, '../dist')));
+app.use(express.static(path.join(__dirname, '../../dist')));
 
+app.get('/', (req, res) => {
+    res.send(path.join(__dirname, 'index.html'));
+});
 
 app.use("/api/products", productsRouter);
 
 app.get('/products', (req, res) => {
+    res.send(path.join(__dirname, 'index.html'));
+});
+
+app.get('/contact', (req, res) => {
     res.send(path.join(__dirname, 'index.html'));
 });
 // Serve static files from the React app
