@@ -7,6 +7,7 @@ const Navbar = () => {
     const isMobile = useMediaQuery("(max-width: 768px)");
 
     return (
+        <>
         <div style={{ backgroundColor: "black", borderBottom: "1px solid #e9ecef", padding: "10px 0" }}>
         <Container size="lg">
         <Flex justify="space-between" align="center">
@@ -25,8 +26,11 @@ const Navbar = () => {
           {/* Navigation Links */}
             {isMobile ? (
             // Mobile View: Burger menu
-            <Burger opened={opened} onClick={toggle} size="sm"
-            style={{ color: "white"}} 
+            <Burger 
+            opened={opened} 
+            onClick={toggle} 
+            size="sm"
+            color="white"
             />
             ) : (
             // Desktop View: Full navigation links
@@ -45,6 +49,61 @@ const Navbar = () => {
         </Flex>
         </Container>
     </div>
+
+    {isMobile && opened && (
+                <div style={{
+                    position: "fixed",
+                    top: "90px", // Adjust based on your navbar height
+                    left: 0,
+                    right: 0,
+                    backgroundColor: "black",
+                    padding: "20px",
+                    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+                    zIndex: 1000,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "20px"
+                }}>
+                    <Link 
+                        to="/" 
+                        onClick={() => toggle()} 
+                        style={{ 
+                            textDecoration: "none", 
+                            color: "white", 
+                            fontSize: "1.1rem",
+                            padding: "10px",
+                        }}
+                    >
+                        Home
+                    </Link>
+                    <Link 
+                        to="/products" 
+                        onClick={() => toggle()} 
+                        style={{ 
+                            textDecoration: "none", 
+                            color: "white", 
+                            fontSize: "1.1rem",
+                            padding: "10px",
+                        }}
+                    >
+                        Products
+                    </Link>
+                    <Link 
+                        to="/contact" 
+                        onClick={() => toggle()} 
+                        style={{ 
+                            textDecoration: "none", 
+                            color: "white", 
+                            fontSize: "1.1rem",
+                            padding: "10px",
+                        }}
+                    >
+                        Contact Us
+                    </Link>
+                </div>
+            )}
+        </>
+
     );
 };
 

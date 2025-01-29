@@ -16,7 +16,7 @@ const Home = () => {
     return (
         <Container size="lg" style={{ marginTop: "2.5rem" }}>
             <Title className="home-steez" align="center" order={1}>
-                Welcome to STEEZ
+                Welcome to steez
             </Title>
 
             <HomeHeroSection />
@@ -32,7 +32,7 @@ const Home = () => {
                 indicator: {
                     width: 12,
                     height: 4,
-                    transition: "width 250ms ease",
+                    transition: "width 400ms ease",
                     "&[dataActive]": {
                         width: 24,
                     },
@@ -44,7 +44,7 @@ const Home = () => {
                     <img
                     src="/shred1.jpg"
                     alt="..."
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
                     />
                 </Carousel.Slide>
 
@@ -52,7 +52,7 @@ const Home = () => {
                     <img
                     src="/shred2.jpg"
                     alt="..."
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
                     />
                 </Carousel.Slide>
 
@@ -60,7 +60,7 @@ const Home = () => {
                     <img
                     src="/shred3.jpg"
                     alt="..."
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
                     />
                 </Carousel.Slide>
 
@@ -68,7 +68,7 @@ const Home = () => {
                     <img
                     src="/shred4.jpg"
                     alt="..."
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
                     />
                 </Carousel.Slide>
 
@@ -76,7 +76,7 @@ const Home = () => {
                     <img
                     src="/shred5.jpg"
                     alt="..."
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
                     />
                 </Carousel.Slide>
             </Carousel>

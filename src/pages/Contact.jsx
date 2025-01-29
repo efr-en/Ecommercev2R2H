@@ -1,10 +1,22 @@
 import { Container, Title, TextInput, Textarea, Button, Group, Text } from '@mantine/core';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { IconPhoneFilled, IconPackage, IconMailFilled } from '@tabler/icons-react';
 
 const Contact = () => {
     const [formData, setFormData] = useState({ name: "", email: "", comment: ""});
     const [errors, setErrors] = useState({});
     const [successMessage, setSuccessMessage] = useState("");
+
+    useEffect(() => {
+        if (successMessage) {
+            const timer = setTimeout(() => {
+                setSuccessMessage("");
+            }, 5000); // 5000 milliseconds = 5 seconds
+
+            // Cleanup function to clear timeout if component unmounts
+            return () => clearTimeout(timer);
+        }
+    }, [successMessage]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -38,12 +50,12 @@ const Contact = () => {
     // The form's visual layout
     return (
         <>
-        <Text>
-        Hello
-    </Text>
         <Container className="contact-form" size="sm" style={{ marginTop: "2rem" }}>
             <Title align="Center" order={1} style={{ marginBottom: "2rem" }}>
                 Contact Us
+            </Title>
+            <Title align="Center" order={6} style={{ marginBottom: "2rem" }}>
+                Note:  messages will be answered 24 to 72 hours from submission.
             </Title>
             <form onSubmit={handleSubmit}>
                 <TextInput
@@ -82,6 +94,25 @@ const Contact = () => {
                 </Text>
             )}
 
+        </Container>
+        <Container className='contact-lower-hero' size="md" radius="lg"
+        padding="xl" style={{ marginTop: "2rem", paddingBottom: "2rem" }} >
+        
+            <Text align="center" color='black'>
+            <IconPhoneFilled size={100} color='black' align="center" />
+                Need more support? Give us a call at 1-800-430-4422
+            </Text>
+
+            <Text align="center" color='black'>
+            <IconPackage size={100} color='black' align="center" />
+                Interested in wholesale? Email us at steezwholesale@steez.com
+            </Text>
+
+            <Text align="center" color='black'>
+            <IconMailFilled size={100} color='black' align="center" />
+
+                Mailing Address: 1234 Steez St. Los Angeles, CA 90001
+            </Text>
         </Container>
         </>
     );
