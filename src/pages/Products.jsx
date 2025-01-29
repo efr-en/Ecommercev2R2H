@@ -9,7 +9,7 @@ const Products = () => {
 
     useEffect(() => {
         const query = new URLSearchParams(filters).toString();
-        fetch(`http://localhost:5000/api/products?${query}`)
+        fetch(`${import.meta.env.VITE_API_URL}/api/products?${query}`)
             .then((res) => res.json())
             .then((data) => setProducts(data));
     }, [filters]);
