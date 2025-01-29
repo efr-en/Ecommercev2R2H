@@ -8,7 +8,7 @@ const Products = () => {
     const isMobile = useMediaQuery('(max-width: 768px)');
 
     useEffect(() => {
-        // const query = new URLSearchParams(filters).toString();
+        const query = new URLSearchParams(filters).toString();
         fetch(`${import.meta.env.VITE_API_URL}/api/products?${query}`)
             .then((res) => res.json())
             .then((data) => setProducts(data));
