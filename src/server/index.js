@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const router = require("./routes/products");
+const productsRouter = require("./routes/products");
 const db = require("./db/config");
 
 
@@ -17,7 +17,7 @@ app.use(cors({
 app.use(express.json());
 
 // API routes
-app.use("/api/products", router);
+app.use("/api/products", productsRouter);
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../dist')));
