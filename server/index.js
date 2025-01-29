@@ -2,8 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const productsRouter = require("./routes/products");
 
+require('dotenv').config({ path: './../.env' }); // Add this as the FIRST line
+
 const app = express();
-const PORT = 5000;
+const PORT = process.env.port || 5000;
 
 //middleware
 app.use(cors());
