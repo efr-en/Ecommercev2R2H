@@ -9,17 +9,18 @@ const Products = () => {
 
     useEffect(() => {
         const query = new URLSearchParams(filters).toString();
-        fetch(`${import.meta.env.VITE_API_URL}/api/products?${query}`)
-            .then((res) {
+        fetch(`ecommerce-db.cr68g8qyiobp.us-east-2.rds.amazonaws.com/api/products?${query}`)
+            .then((res) => {
                 if (!res.ok) {
                     throw new Error('Failed to fetch products');
                 }
                 return res.json();
             })
-            }
+            
             .then((data) => setProducts(data))
-            .catch((error) =>  {
+            .catch((error) => {
                 console.error('Error fetching products:', error);
+            });
     }, [filters]);
 
     const handleFilterChange = (key, value) => {
