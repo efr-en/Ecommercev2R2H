@@ -17,14 +17,15 @@ app.use(cors({
 app.use(express.json());
 
 // API routes
+app.use(express.static(path.join(__dirname, '../dist')));
+
 
 app.use("/api/products", productsRouter);
 
-app.get('/contact', (req, res) => {
+app.get('/products', (req, res) => {
     res.send(path.join(__dirname, 'index.html'));
 });
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, '../dist')));
 
 // The "catchall" handler: for any request that doesn't match one above, send back index.html.
 app.get('*', (req, res) => {
