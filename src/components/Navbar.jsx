@@ -53,7 +53,7 @@ const Navbar = () => {
     {isMobile && opened && (
                 <div style={{
                     position: "fixed",
-                    top: "90px", // Adjust based on your navbar height
+                    top: "65px", // Adjust based on your navbar height
                     left: 0,
                     right: 0,
                     backgroundColor: "black",

@@ -15,10 +15,8 @@ const Home = () => {
 
     return (
         <Container size="lg" style={{ marginTop: "2.5rem" }}>
-            <Title className="home-steez" align="center" order={1}>
-                Welcome to steez
-            </Title>
-
+            {/* <Title className="home-steez" align="center" order={1}>
+            </Title> */}
             <HomeHeroSection />
 
             <Carousel className='home-carousel'
