@@ -17,6 +17,9 @@ app.use(cors({
 app.use(express.json());
 
 // API routes
+app.get("/products", async (req, res) => {
+    res.send(path.join(__dirname, '../dist', 'index.html'));
+})
 app.use("/api/products", productsRouter);
 
 app.get('/contact', (req, res) => {
