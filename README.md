@@ -1,7 +1,6 @@
 # E-Commerce Site
 
-Welcome to the E-Commerce Site! This project is a fully functional online shopping platform that allows users to browse products, add them to their cart, and complete purchases securely.
-
+Welcome to the steez! This project is a functional e-commerce site built upon my previous iteration of steez using MERN (MySQL, Express, React, Node.js). This site is a shopping platform that allows users to browse for the latest skateboard decks and shoes.
 ## Table of Contents
 
 - [Features](#features)
