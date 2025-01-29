@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000; // Use uppercase PORT
 
 // Middleware
 app.use(cors({
-    origin: 'https://ecommercev2-r2-h-fmbw.vercel.app' // frontend URL,
+    origin: 'https://ecommercev2-r2-h-fmbw-git-main-efr-ens-projects.vercel.app' // frontend URL,
 }));
 app.use(express.json());
 
