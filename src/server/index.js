@@ -17,7 +17,7 @@ app.use(cors({
 app.use(express.json());
 
 // API routes
-app.use(express.static(path.join(__dirname, '../../dist')));
+app.use(express.static(path.join(__dirname, '..', '..', 'dist')));
 
 app.get('/', (req, res) => {
     res.send(path.join(__dirname, 'index.html'));
