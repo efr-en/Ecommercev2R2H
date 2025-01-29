@@ -3,7 +3,7 @@ const cors = require("cors");
 const path = require("path");
 const productsRouter = require("./routes/products");
 
-require('dotenv').config({ path: path.join(__dirname, '../.env') }); // Load environment variables
+require('dotenv').config({ path: path.join(__dirname, '../../.env') }); // Load environment variables
 
 const app = express();
 const PORT = process.env.PORT || 5000; // Use uppercase PORT
