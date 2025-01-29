@@ -21,7 +21,7 @@ app.use(express.json());
 app.use("/api/products", productsRouter);
 
 app.get('/contact', (req, res) => {
-    res.send(path.join(__dirname, '../dist', 'index.html'));
+    res.send(path.join(__dirname, 'index.html'));
 });
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../dist')));
