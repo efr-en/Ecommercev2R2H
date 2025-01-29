@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
     res.send(path.join(__dirname, 'index.html'));
 });
 
-app.get("/api/products", productsRouter);
+app.use("/api/products", productsRouter);
 
 app.get('/products', (req, res) => {
     res.send(path.join(__dirname, 'index.html'));
