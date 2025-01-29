@@ -1,4 +1,4 @@
-# E-Commerce Site
+# steez - Your one stop shop for the latest skate gear
 
 Welcome to the steez! This project is a functional e-commerce site built upon my previous iteration of steez using MERN (MySQL, Express, React, Node.js). This site is a shopping platform that allows users to browse for the latest skateboard decks and shoes.
 ## Table of Contents
