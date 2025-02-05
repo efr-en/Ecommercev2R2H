@@ -10,19 +10,21 @@ require('dotenv').config({ path: path.join(__dirname, '../../.env') }); // Load 
 const app = express();
 const PORT = process.env.PORT || 5000; 
 
-// Middleware
+// Middleware, enable CORS for all origins
 app.use(cors({
     origin: '*' 
 }));
-app.use(express.json());
+app.use(express.json()); // Parse incoming JSON bodies
 
 // API routes
 app.use(express.static(path.join(__dirname, '..', '..', 'dist')));
 
+// Define a route for the root URL that serves the index.html file
 app.get('/', (req, res) => {
     res.send(path.join(__dirname, 'index.html'));
 });
 
+// Mount the products router on the /api/products path
 app.use("/api/products", productsRouter);
 
 app.get('/products', (req, res) => {

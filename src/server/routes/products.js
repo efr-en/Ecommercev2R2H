@@ -5,11 +5,12 @@ const router = express.Router();
 
 // To get all products or filtered products
 router.get("/", async (req, res) => {
-    const { price, type } = req.query;
+    const { price, type } = req.query; // Destructure price and type from query string
 
     let query = "SELECT * FROM products WHERE 1=1";
-    const params = [];
+    const params = []; //Array to store query parameters
 
+    //Price & Filter query
     if (price) {
         query += " AND price <= ?";
         params.push(price);
@@ -19,7 +20,7 @@ router.get("/", async (req, res) => {
         params.push(type);
     }
 
-    try {
+    try { // Execute the query and get results
         const [results] = await db.execute(query, params);
         res.json(results);
     } catch (err) {
